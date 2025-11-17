@@ -8,7 +8,8 @@ from PyQt5.QtWidgets import (
     QHBoxLayout,
     QLineEdit,
     QComboBox,
-)  # QLineEdit, QComboBox 추가
+    QLabel,
+)  # QLabel 추가
 from PyQt5.QtGui import QIcon
 from PyQt5 import QtCore  # 모듈 추가
 
@@ -32,11 +33,13 @@ class View(QWidget):
         self.te1 = QPlainTextEdit()  # 텍스트 에디트 위젯 생성
         self.te1.setReadOnly(True)  # 텍스트 에디트 위젯을 읽기만 하도록 수정
 
+        self.lbl1 = QLabel("v2.3.0", self) # 버전 정보 표시를 위한 lbl1 위젯 생성
         self.btn1 = QPushButton("Calc", self)  # 버튼 이름 변경
         self.btn2 = QPushButton("Clear", self)  # 버튼2 추가
 
         hbox = QHBoxLayout()  # 수평 박스 레이아웃을 추가하고 버튼1, 2 추가
         hbox.addStretch(1)  # 공백
+        hbox.addWidget(self.lbl1)  # 버전 정보 표시를 위한 lbl1 위젯 생성
         hbox.addWidget(self.btn1)  # 버튼1 배치
         hbox.addWidget(self.btn2)  # 버튼2 배치
         hbox_formular = QHBoxLayout()  # 새로 정의한 위젯을 QHBoxLayout에 배치
